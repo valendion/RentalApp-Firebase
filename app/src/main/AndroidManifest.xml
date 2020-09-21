@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.rentalmobil">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_rental"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.AboutActivity"
+            android:parentActivityName=".activity.BottomNavigationActivity"
+            android:noHistory="true"/>
+        <activity android:name=".activity.DrawerActivity" />
+        <activity android:name=".activity.ViewTrackingActivity" />
+        <activity android:name=".activity.pembayaran.ThanksActivity" />
+        <activity android:name=".activity.SendImageActivity" />
+        <activity android:name=".activity.login.RegisterActivity" />
+        <activity android:name=".activity.login.LoginActivity" />
+        <activity
+            android:name=".activity.BottomNavigationActivity"
+            android:launchMode="singleTask" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".activity.home.DetailTrackingActivity"
+            android:parentActivityName=".activity.BottomNavigationActivity" />
+        <activity
+            android:name=".activity.pembayaran.ConfiirmPaymentAtmActivity" />
+        <activity android:name=".activity.pembayaran.CashOnDeliveryActivity" />
+        <activity android:name=".activity.pembayaran.AtmTransferActivity" />
+        <activity android:name=".activity.home.ConfrimActivity" />
+        <activity
+            android:name=".activity.home.DataPemesananActivity"
+            android:parentActivityName=".activity.BottomNavigationActivity" />
+        <activity android:name=".activity.MainActivity" />
+        <activity
+            android:name=".activity.SplashScreen"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.home.DataPemesananActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/ct_bar_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/iv_image_car"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_image"
+                app:layout_collapseMode="parallax" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_detail"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="16dp">
+
+                <TextView
+                    android:id="@+id/tv_name_car_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="Pete-pete kuning"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_price_car_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Rp. 200.000 / days"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_name_car_input"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_name_car_input"/>
+
+                <TextView
+                    android:id="@+id/tv_plat_car_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="DD"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_name_car_input"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name_car_input" />
+
+                <TextView
+                    android:id="@+id/tv_year_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2019"
+                    android:layout_marginTop="8dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_price_car_input"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_price_car_input" />
+
+                <TextView
+                    android:id="@+id/tv_color_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kuning"
+                    android:layout_marginEnd="16dp"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_year_car"
+                    app:layout_constraintTop_toTopOf="@+id/tv_year_car" />
+
+                <View
+                    android:id="@+id/tv_separator_input_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintTop_toBottomOf="@id/tv_color_car" />
+
+                <!--    What you will get    -->
+
+                <TextView
+                    android:id="@+id/tv_you_will_get"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Fasilitas"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_separator_input_1" />
+
+                <TextView
+                    android:id="@+id/tv_fuel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:drawableStart="@drawable/ic_fuel"
+                    android:drawablePadding="8dp"
+                    android:text="@string/full_tank"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_televisition"
+                    app:layout_constraintStart_toStartOf="@+id/tv_you_will_get"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_you_will_get" />
+
+                <TextView
+                    android:id="@+id/tv_televisition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:drawableStart="@drawable/ic_tv"
+                    android:text="@string/tv"
+                    android:drawablePadding="8dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_fuel"
+                    app:layout_constraintTop_toTopOf="@+id/tv_fuel"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_Radio"/>
+
+                <TextView
+                    android:id="@+id/tv_Radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:drawableStart="@drawable/ic_radio"
+                    android:text="@string/radio"
+                    android:drawablePadding="8dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_televisition"
+                    app:layout_constraintTop_toTopOf="@+id/tv_televisition"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_seat_4"/>
+
+                <TextView
+                    android:id="@+id/tv_seat_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:drawableStart="@drawable/ic_seat"
+                    android:text="@string/_4_seat"
+                    android:drawablePadding="8dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_Radio"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_seat_6"
+                    app:layout_constraintTop_toTopOf="@+id/tv_Radio" />
+
+                <TextView
+                    android:id="@+id/tv_seat_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:drawableStart="@drawable/ic_seat"
+                    android:text="@string/_6_seat"
+                    android:drawablePadding="8dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_seat_4"
+                    app:layout_constraintTop_toTopOf="@+id/tv_seat_4"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
+                <View
+                    android:id="@+id/tv_separator_input_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintTop_toBottomOf="@id/tv_fuel" />
+
+                <!--   End    -->
+
+                <!--  Book Detail -->
+
+                <TextView
+                    android:id="@+id/tv_booking_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Opsi Pemesanan"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_separator_input_2" />
+
+                <TextView
+                    android:id="@+id/tv_chose_driver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Pilih Layanan Pengemudi"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_booking_detail"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_booking_detail" />
+
+                <RadioGroup
+                    android:id="@+id/rg_driver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv_chose_driver"
+                    app:layout_constraintTop_toBottomOf="@id/tv_chose_driver">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/rb_withDriver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Dengan Supir"
+                        android:textColor="@color/colorPrimary" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/rb_withoutDriver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Tanpa Supir"
+                        android:textColor="@color/colorPrimary" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/tv_select_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Pilih Area"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/rg_driver"
+                    app:layout_constraintTop_toBottomOf="@+id/rg_driver" />
+
+                <RadioGroup
+                    android:id="@+id/rg_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_select_area"
+                    app:layout_constraintTop_toBottomOf="@id/tv_select_area">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/rb_makassar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Makassar"
+                        android:textColor="@color/colorPrimary" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/rb_outside"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Di luar Makassar"
+                        android:textColor="@color/colorPrimary" />
+                </RadioGroup>
+
+
+                <TextView
+                    android:id="@+id/tv_icon_tgl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:drawableLeft="@drawable/ic_date"
+                    app:layout_constraintStart_toStartOf="@+id/rg_area"
+                    app:layout_constraintTop_toBottomOf="@+id/rg_area" />
+
+                <TextView
+                    android:id="@+id/tv_pickup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Tanggal Ambil - Tanggal Kembali"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_icon_tgl"
+                    app:layout_constraintStart_toEndOf="@+id/tv_icon_tgl"
+                    app:layout_constraintTop_toTopOf="@+id/tv_icon_tgl" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center"
+                    android:text="Jadwal Anda"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_icon_tgl"
+                    app:layout_constraintTop_toBottomOf="@id/tv_icon_tgl" />
+
+                <TextView
+                    android:id="@+id/tv_date_pickup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text=""
+                    app:layout_constraintEnd_toStartOf="@+id/tv_return"
+                    app:layout_constraintStart_toStartOf="@+id/tv_icon_tgl"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_date" />
+
+                <TextView
+                    android:id="@+id/tv_return"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text=""
+                    app:layout_constraintEnd_toStartOf="@+id/tv_howMany"
+                    app:layout_constraintStart_toEndOf="@+id/tv_date_pickup"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_date" />
+
+                <TextView
+                    android:id="@+id/tv_howMany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:text=""
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_return"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_date" />
+
+                <!--   End    -->
+
+                <Button
+                    android:id="@+id/btn_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Selanjutnya"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_return" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

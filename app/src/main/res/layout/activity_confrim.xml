@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.home.ConfrimActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_confrim"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="16dp">
+
+
+                <ImageView
+                    android:id="@+id/iv_image_car_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tv_name_car_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@string/pete_pete_kuning"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_image_car_confirm" />
+
+                <TextView
+                    android:id="@+id/tv_year_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="2019"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_color_confirm"
+                    app:layout_constraintStart_toEndOf="@+id/tv_color_car_confirm"
+                    app:layout_constraintTop_toTopOf="@id/tv_color_car_confirm"
+                    app:layout_goneMarginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_color_car_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/kuning"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_year_confirm"
+                    app:layout_constraintStart_toStartOf="@+id/tv_color_confirm"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_color_confirm" />
+
+                <TextView
+                    android:id="@+id/tv_color_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/rp_270_000_hari"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_name_car_confirm" />
+
+                <View
+                    android:id="@+id/tv_separator_confrim_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintTop_toBottomOf="@id/tv_color_car_confirm" />
+
+                <!--       Batas separator         -->
+
+                <TextView
+                    android:id="@+id/tv_total_cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/total_biaya"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_separator_confrim_1" />
+
+
+
+
+                <TextView
+                    android:id="@+id/tv_date_pickup_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="12/07/2020 - 14/07/2020"
+                    app:layout_constraintStart_toStartOf="@+id/tv_total_cost"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_total_cost" />
+
+                <TextView
+                    android:id="@+id/tv_driver_cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/biaya_pengemudi"
+                    app:layout_constraintStart_toStartOf="@+id/tv_date_pickup_confirm"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_date_pickup_confirm" />
+
+                <View
+                    android:id="@+id/tv_separator_confrim_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintTop_toBottomOf="@id/tv_driver_cost" />
+
+                <TextView
+                    android:id="@+id/tv_total_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Total"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_separator_confrim_2" />
+
+                <TextView
+                    android:id="@+id/tv_price_rent_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Rp. 600.000"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_date_pickup_confirm"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_date_pickup_confirm" />
+
+                <TextView
+                    android:id="@+id/tv_price_driver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Rp. 150.000"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_driver_cost"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_driver_cost" />
+
+                <TextView
+                    android:id="@+id/tv_price_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Rp. 750.000"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_total_confirm"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_total_confirm" />
+
+
+                <TextView
+                    android:id="@+id/tv_pay_with"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/pilih_metode_pembayaran_anda"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_price_total" />
+
+
+                <Button
+                    android:id="@+id/btn_atm_transfer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:padding="8dp"
+                    android:text="@string/transfer_atm"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_cod"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_pay_with" />
+
+                <Button
+                    android:id="@+id/btn_cod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/bayar_di_tempat"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btn_atm_transfer"
+                    app:layout_constraintTop_toTopOf="@id/btn_atm_transfer" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
